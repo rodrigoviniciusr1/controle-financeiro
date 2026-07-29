@@ -73,6 +73,12 @@ async def menu_comando(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def tratar_botoes(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer() # Confirma a recepção do clique
+
+    # Captura a exceção caso o clique no botão já tenha expirado
+    try:
+        await query.answer()
+    except Exception:
+        pass  # Ignora o timeout e continua o processamento normalmente
     
     user_id = query.from_user.id
     opcao = query.data
