@@ -8,7 +8,7 @@ from io import BytesIO
 st.set_page_config(page_title="Controle Financeiro", page_icon="🔒", layout="wide")
 
 # Senha global para acesso ao dashboard (pode alterar aqui)
-SENHA_ACESSO = "12345"
+SENHA_ACESSO = "123456"
 
 def buscar_usuarios():
     conn = sqlite3.connect('controle_financeiro.db')
